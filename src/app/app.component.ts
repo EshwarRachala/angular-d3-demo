@@ -1,4 +1,4 @@
-import { D3Service, D3 } from './shared/d3.service';
+import { D3Service, D3 } from '../shared/d3';
 import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-root',
