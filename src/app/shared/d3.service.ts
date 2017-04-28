@@ -30,7 +30,6 @@ export class D3Service {
   }
 
   private responsify(svg: any) {
-    debugger;
     const container = d3.select(svg.node().parentNode);
 
     // tslint:disable-next-line:radix
