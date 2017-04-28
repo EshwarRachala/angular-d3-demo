@@ -1,6 +1,5 @@
 import { Component, OnInit, OnChanges, ViewChild, ElementRef, Input, ViewEncapsulation } from '@angular/core';
-import * as d3 from '../d3';
-import { D3Service } from '../d3';
+import { D3Service, D3 } from '../d3';
 
 @Component({
   selector: 'app-barchart',
@@ -21,10 +20,11 @@ export class BarchartComponent implements OnInit, OnChanges {
   private xAxis: any;
   private yAxis: any;
   private d3service: D3Service;
-
+  private d3: D3;
 
   constructor(private d3Service: D3Service) {
     this.d3service = d3Service;
+    this.d3 = d3Service.getD3();
   }
 
   ngOnInit() {
@@ -53,33 +53,33 @@ export class BarchartComponent implements OnInit, OnChanges {
 
     // define X & Y domains
     const xDomain = this.data.map(d => d[0]);
-    const yDomain = [0, d3.max(this.data, d => d[1])];
+    const yDomain = [0, this.d3.max(this.data, d => d[1])];
 
     // create scales
-    this.xScale = d3.scaleBand().padding(0.1).domain(xDomain).rangeRound([0, this.width]);
-    this.yScale = d3.scaleLinear().domain(yDomain).range([this.height, 0]);
+    this.xScale = this.d3.scaleBand().padding(0.1).domain(xDomain).rangeRound([0, this.width]);
+    this.yScale = this.d3.scaleLinear().domain(yDomain).range([this.height, 0]);
 
     // bar colors
-    this.colors = d3.scaleLinear().domain([0, this.data.length]).range(<any[]>['red', 'blue']);
+    this.colors = this.d3.scaleLinear().domain([0, this.data.length]).range(<any[]>['red', 'blue']);
 
     // x & y axis
     this.xAxis = svg.append('g')
       .attr('class', 'axis axis-x')
       .attr('transform', `translate(${this.margin.left}, ${this.margin.top + this.height})`)
-      .call(d3.axisBottom(this.xScale));
+      .call(this.d3.axisBottom(this.xScale));
     this.yAxis = svg.append('g')
       .attr('class', 'axis axis-y')
       .attr('transform', `translate(${this.margin.left}, ${this.margin.top})`)
-      .call(d3.axisLeft(this.yScale));
+      .call(this.d3.axisLeft(this.yScale));
   }
 
   updateChart() {
     // update scales & axis
     this.xScale.domain(this.data.map(d => d[0]));
-    this.yScale.domain([0, d3.max(this.data, d => d[1])]);
+    this.yScale.domain([0, this.d3.max(this.data, d => d[1])]);
     this.colors.domain([0, this.data.length]);
-    this.xAxis.transition().call(d3.axisBottom(this.xScale));
-    this.yAxis.transition().call(d3.axisLeft(this.yScale));
+    this.xAxis.transition().call(this.d3.axisBottom(this.xScale));
+    this.yAxis.transition().call(this.d3.axisLeft(this.yScale));
 
     const update = this.chart.selectAll('.bar')
       .data(this.data);
