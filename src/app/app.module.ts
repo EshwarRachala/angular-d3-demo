@@ -1,4 +1,3 @@
-import { GroupedBarchartComponent } from './../shared/grpd-bar-chart/grpd-bar-chart.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -6,12 +5,13 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { D3Service } from '../shared/d3';
 import { BarchartComponent } from '../shared/bar-chart/bar-chart.component';
+import { GrpdBarchartComponent } from './../shared/grpd-bar-chart/grpd-bar-chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BarchartComponent,
-    GroupedBarchartComponent
+    GrpdBarchartComponent
   ],
   imports: [
     BrowserModule,

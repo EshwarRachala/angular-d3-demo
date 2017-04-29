@@ -56,17 +56,21 @@ export class BarchartComponent implements OnInit, OnChanges {
     const yDomain = [0, this.d3.max(this.data, d => d[1])];
 
     // create scales
-    this.xScale = this.d3.scaleBand().padding(0.1).domain(xDomain).rangeRound([0, this.width]);
+    this.xScale = this.d3.scaleBand().padding(0.1).domain(xDomain)
+      .rangeRound([0, this.width]);
+
     this.yScale = this.d3.scaleLinear().domain(yDomain).range([this.height, 0]);
 
     // bar colors
-    this.colors = this.d3.scaleLinear().domain([0, this.data.length]).range(<any[]>['red', 'blue']);
+    this.colors = this.d3.scaleLinear().domain([0, this.data.length])
+      .range(<any[]>['red', 'blue']);
 
     // x & y axis
     this.xAxis = svg.append('g')
       .attr('class', 'axis axis-x')
       .attr('transform', `translate(${this.margin.left}, ${this.margin.top + this.height})`)
       .call(this.d3.axisBottom(this.xScale));
+
     this.yAxis = svg.append('g')
       .attr('class', 'axis axis-y')
       .attr('transform', `translate(${this.margin.left}, ${this.margin.top})`)
