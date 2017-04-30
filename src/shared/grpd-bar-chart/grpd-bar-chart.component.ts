@@ -49,7 +49,7 @@ export class GrpdBarchartComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
     if (this.chart) {
-      this.updateChart();
+    //  this.updateChart();
     }
   }
 
@@ -99,8 +99,8 @@ export class GrpdBarchartComponent implements OnInit, OnChanges {
 
     const series = this.chart.selectAll('.series')
       .data(y01z)
-      .enter().append('g');
-    //  .attr('fill', function (d, i) { return color(i); });
+      .enter().append('g')
+      .attr('fill', function (d, i) { return color(i); });
 
     const rect = series.selectAll('rect')
       .data((d: any) => d)
