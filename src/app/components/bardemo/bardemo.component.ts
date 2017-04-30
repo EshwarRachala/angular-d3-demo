@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class BarDemoComponent implements OnInit {
-  title = 'Angular D3 components';
   private d3: D3;
   private chartData: Array<any>;
 

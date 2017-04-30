@@ -12,8 +12,7 @@ import { D3Service, D3 } from '../d3';
 export class GrpdBarchartComponent implements OnInit, OnChanges {
   value: string;
   @ViewChild('chart') private chartContainer: ElementRef;
-  @ViewChild('radio') private radioContainer: ElementRef;
-  @Input() private data: Array<any>;
+  // @Input() private data: Array<any>;
   private margin: any = { top: 20, bottom: 60, left: 50, right: 20 };
   private width: number;
   private height: number;
@@ -42,14 +41,12 @@ export class GrpdBarchartComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.createChart();
-    if (this.data) {
-      this.updateChart();
-    }
+    this.updateChart();
   }
 
   ngOnChanges() {
     if (this.chart) {
-    //  this.updateChart();
+      //  this.updateChart();
     }
   }
 
