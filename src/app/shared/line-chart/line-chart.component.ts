@@ -2,12 +2,12 @@ import { Component, OnInit, OnChanges, ViewChild, ElementRef, Input, ViewEncapsu
 import { D3Service, D3 } from '../d3';
 
 @Component({
-  selector: 'app-bar-chart',
-  templateUrl: './bar-chart.component.html',
-  styleUrls: ['./bar-chart.component.css'],
+  selector: 'app-line-chart',
+  templateUrl: './line-chart.component.html',
+  styleUrls: ['./line-chart.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class BarchartComponent implements OnInit, OnChanges {
+export class LinechartComponent implements OnInit, OnChanges {
   @ViewChild('chart') private chartContainer: ElementRef;
   @Input() private data: Array<any>;
   private margin: any = { top: 20, bottom: 60, left: 50, right: 20 };
@@ -41,6 +41,7 @@ export class BarchartComponent implements OnInit, OnChanges {
   }
 
   createChart() {
+    const d3 = this.d3;
     const element = this.chartContainer.nativeElement;
     this.width = element.offsetWidth - this.margin.left - this.margin.right;
     this.height = element.offsetHeight - this.margin.top - this.margin.bottom;
@@ -52,18 +53,20 @@ export class BarchartComponent implements OnInit, OnChanges {
       .attr('transform', `translate(${this.margin.left}, ${this.margin.top})`);
 
     // define X & Y domains
-    const xDomain = this.data.map(d => d[0]);
-    const yDomain = [0, this.d3.max(this.data, d => d[1])];
+    const xDomain = d3.extent(this.data, function (d) {
+      return d[0];
+    });
+
+    const yDomain = d3.extent(this.data, function (d) {
+      return d[1];
+    });
 
     // create scales
-    this.xScale = this.d3.scaleBand().padding(0.1).domain(xDomain)
-      .rangeRound([0, this.width]);
+    this.xScale = d3.scaleTime().rangeRound([0, this.width]);
 
-    this.yScale = this.d3.scaleLinear().domain(yDomain).range([this.height, 0]);
+    this.yScale = d3.scaleLinear().rangeRound([this.height, 0]);
 
-    // bar colors
-    this.colors = this.d3.scaleLinear().domain([0, this.data.length])
-      .range(<any[]>['red', 'blue']);
+    this.xScale.domain(xDomain);
 
     // x & y axis
     this.xAxis = svg.append('g')

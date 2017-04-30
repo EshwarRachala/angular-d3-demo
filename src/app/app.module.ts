@@ -1,3 +1,5 @@
+import { LineDemoComponent } from './components/linedemo/linedemo.component';
+import { LinechartComponent } from './shared/line-chart/line-chart.component';
 import { StackedBarDemoComponent } from './components/stackedtogroupedbar/stackedbardemo.component';
 import { BarDemoComponent } from './components/bardemo/bardemo.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,6 +19,8 @@ import { RouterModule } from '@angular/router';
     BarDemoComponent,
     StackedBarDemoComponent,
     BarchartComponent,
+    LinechartComponent,
+    LineDemoComponent,
     GrpdBarchartComponent
   ],
   imports: [

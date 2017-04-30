@@ -11,6 +11,7 @@ export class AppComponent {
 
   private links = {
     barchart: ['/barchart'],
+    linechart: ['/linechart'],
     stackedtogroupedbar: ['/stackedtogroupedbar']
   }
 
