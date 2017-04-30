@@ -50,7 +50,7 @@ export class D3Service {
       const targetWidth = parseInt(container.style('width'));
       svg.attr('width', targetWidth);
       svg.attr('height', Math.round(targetWidth / aspect));
-      svg.style('background-color', 'lightgray');
+    //  svg.style('background-color', 'lightgray');
     }
   }
 
