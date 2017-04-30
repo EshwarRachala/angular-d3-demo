@@ -170,13 +170,13 @@ export class GrpdBarchartComponent implements OnInit, OnChanges {
     // tslint:disable-next-line:no-shadowed-variable
     function bumps(m) {
       // tslint:disable-next-line:prefer-const
-      const values = [];
+      let values = [];
       // tslint:disable-next-line:no-shadowed-variable
       let i, j, w, x, y, z;
 
       // Initialize with uniform random values in [0.1, 0.2).
       for (i = 0; i < m; ++i) {
-        values[i] = 0.1 + 0.1 * Math.random();
+        values[i] = 0.3 + 0.1 * Math.random();
       }
 
       // Add five random bumps.
