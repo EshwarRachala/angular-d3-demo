@@ -127,10 +127,10 @@ export class GrpdBarchartComponent implements OnInit, OnChanges {
       d3.select('input[value="grouped"]')
         .property('checked', true)
         .dispatch('change');
-    }, 2000);
+    }, 1000);
 
     function changed() {
-      timeout.stop();
+     // timeout.stop();
       // tslint:disable-next-line:curly
       if (this.value === 'grouped') transitionGrouped(); else transitionStacked();
     }
