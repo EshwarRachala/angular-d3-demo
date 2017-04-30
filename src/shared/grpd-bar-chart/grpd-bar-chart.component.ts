@@ -1,3 +1,4 @@
+import { endTimeRange } from '@angular/core/src/profile/wtf_impl';
 import { Component, OnInit, OnChanges, ViewChild, ElementRef, Input, ViewEncapsulation } from '@angular/core';
 import { D3Service, D3 } from '../d3';
 
@@ -14,7 +15,6 @@ export class GrpdBarchartComponent implements OnInit, OnChanges {
   @ViewChild('radio') private radioContainer: ElementRef;
   @Input() private data: Array<any>;
   private margin: any = { top: 20, bottom: 60, left: 50, right: 20 };
-  private chart: any;
   private width: number;
   private height: number;
   private n = 4;
@@ -33,6 +33,7 @@ export class GrpdBarchartComponent implements OnInit, OnChanges {
   private timeout: d3.Timer;
   private d3service: D3Service;
   private d3: D3;
+  private chart: any;
 
   constructor(private d3Service: D3Service) {
     this.d3service = d3Service;
@@ -57,83 +58,73 @@ export class GrpdBarchartComponent implements OnInit, OnChanges {
     const element = this.chartContainer.nativeElement;
     this.width = element.offsetWidth - this.margin.left - this.margin.right;
     this.height = element.offsetHeight - this.margin.top - this.margin.bottom;
+
+
     const svg = this.d3service.getSvg(element);
 
+    this.chart = svg.append('g').attr('transform',
+      'translate(' + this.margin.left + ',' + this.margin.top + ')');
+
+
     // chart plot area
-    this.chart = svg.append('g')
-      .attr('class', 'bars')
-      .attr('transform', `translate(${this.margin.left}, ${this.margin.top})`);
-
-
-    this.xz = d3.range(this.m);
-    this.yz = d3.range(this.n).map(() => this.bumps(this.m));
-
-    const range: any = d3.range(this.n);
-    const transpose: any = d3.transpose(this.yz);
-
-    this.y01z = d3.stack().keys(range)(this.yz, (z: any) => d3.transpose(z));
-    this.yMax = d3.max(this.yz, (y: any) => d3.max(y));
-    this.y1Max = d3.max(this.y01z, (y: any) => d3.max<any>(y, d => d[1]));
-
-    this.xScale = d3.scaleBand()
-      .domain(this.xz)
-      .rangeRound([0, this.width])
-      .padding(0.08);
-
-    this.yScale = d3.scaleLinear()
-      .domain([0, this.y1Max])
-      .range([this.height, 0]);
-
-    this.color = d3.scaleOrdinal()
-      .domain(range)
-      .range(d3.schemeCategory20c);
-
-    this.xAxis = svg.append('g')
-      .attr('class', 'axis axis-x')
-      .attr('transform', `translate(${this.margin.left},
-      ${this.margin.top + this.height})`)
-      .call(this.d3.axisBottom(this.xScale)
-        .tickSize(0).tickPadding(6));
   }
 
   updateChart() {
     const d3 = this.d3;
-    this.xz = d3.range(this.m);
 
-    this.yz = d3.range(this.n).map(() => this.bumps(this.m));
+    const n = 4, // The number of series.
+      m = 58; // The number of values per series.
+    const xz: any = d3.range(m),
+      yz = d3.range(n).map(function () { return bumps(m); }),
+      range: any = d3.range(n),
+      transpose: any = d3.transpose(yz),
+      y01z: any = d3.stack().keys(range)(transpose),
+      yMax: any = d3.max(yz, function (y) { return d3.max(y); }),
+      y1Max: any = d3.max(y01z, function (y: any) {
+        return d3.max(y, function (d) { return d[1]; });
+      });
 
-    this.xScale.domain(this.xz);
-    this.yScale.domain([0, this.y1Max]);
+    const x = d3.scaleBand()
+      .domain(xz)
+      .rangeRound([0, this.width])
+      .padding(0.08);
 
-    const range: any = d3.range(this.n);
-    const transpose: any = d3.transpose(this.yz);
+    const y = d3.scaleLinear()
+      .domain([0, y1Max])
+      .range([this.height, 0]);
 
-    this.y01z = d3.stack().keys(range)(this.yz, (z: any) => d3.transpose(z));
-    this.yMax = d3.max(this.yz, (y: any) => d3.max(y));
-    this.y1Max = d3.max(this.y01z, (y: any) => d3.max<any>(y, d => d[1]));
-
-    this.xAxis.transition().call(
-      d3.axisBottom(this.xScale)
-        .tickSize(0).tickPadding(6));
-
+    const color = d3.scaleOrdinal()
+      .domain(range)
+      .range(d3.schemeCategory20c);
 
     const series = this.chart.selectAll('.series')
-      .data(this.y01z)
-      .enter().append('g')
-      .attr('fill', (d, i) => this.color(i));
+      .data(y01z)
+      .enter().append('g');
+    //  .attr('fill', function (d, i) { return color(i); });
 
     const rect = series.selectAll('rect')
-      .data(function (d) { return d; })
+      .data((d: any) => d)
       .enter().append('rect')
-      .attr('x', (d, i) => this.xScale(i))
+      .attr('x', (d, i: any) => x(i))
       .attr('y', this.height)
-      .attr('width', this.xScale.bandwidth())
+      .attr('width', x.bandwidth())
       .attr('height', 0);
+
 
     rect.transition()
       .delay(function (d, i) { return i * 10; })
-      .attr('y', d => this.yScale(d[1]))
-      .attr('height', d => this.yScale(d[0]) - this.yScale(d[1]));
+      .attr('y', function (d) { return y(d[1]); })
+      .attr('height', function (d) { return y(d[0]) - y(d[1]); });
+
+    this.chart.append('g')
+      .attr('class', 'axis axis--x')
+      .attr('transform', 'translate(0,' + this.height + ')')
+      .call(d3.axisBottom(x)
+        .tickSize(0)
+        .tickPadding(6));
+
+    d3.selectAll('input')
+      .on('change', changed);
 
     const timeout = d3.timeout(function () {
       d3.select('input[value="grouped"]')
@@ -141,80 +132,73 @@ export class GrpdBarchartComponent implements OnInit, OnChanges {
         .dispatch('change');
     }, 2000);
 
-    // tslint:disable-next-line:
-    d3.selectAll('input').on('change', changed);
-
     function changed() {
       timeout.stop();
-      if (this.value === 'grouped') {
-        Grouped();
-      } else {
-        Stacked();
-      }
+      // tslint:disable-next-line:curly
+      if (this.value === 'grouped') transitionGrouped(); else transitionStacked();
     }
-    const yScale = this.yScale;
-    const xScale = this.xScale;
-    const yMax = this.yMax;
-    const y1Max = this.y1Max;
-    const n = this.n;
 
-    function Grouped() {
-      yScale.domain([0, yMax]);
+    // .attr('x', (d, i: any) => x(i) + x.bandwidth() / n * this.parentNode.__data__.key)
 
+    function transitionGrouped() {
+      y.domain([0, yMax]);
       rect.transition()
         .duration(500)
         .delay(function (d, i) { return i * 10; })
-        .attr('x',
-        function (d, i) {
-          return xScale(i) + xScale.bandwidth() /
-            n * this.parentNode.__data__.key;
+        .attr('x', function (d, i) {
+          return x(i) + x.bandwidth() / n * this.parentNode.__data__.key;
         })
-        .attr('width', xScale.bandwidth() / n)
+        .attr('width', x.bandwidth() / n)
         .transition()
-        .attr('y', function (d) { return yScale(d[1] - d[0]); })
-        .attr('height', function (d) {
-          return yScale(0) - yScale(d[1] - d[0]);
-        });
-
+        .attr('y', function (d) { return y(d[1] - d[0]); })
+        .attr('height', function (d) { return y(0) - y(d[1] - d[0]); });
     }
 
-    function Stacked() {
-
-      yScale.domain([0, y1Max]);
+    function transitionStacked() {
+      y.domain([0, y1Max]);
 
       rect.transition()
         .duration(500)
         .delay(function (d, i) { return i * 10; })
-        .attr('y', function (d) { return yScale(d[1]); })
-        .attr('height', function (d) { return yScale(d[0]) - yScale(d[1]); })
+        .attr('y', function (d) { return y(d[1]); })
+        .attr('height', function (d) { return y(d[0]) - y(d[1]); })
         .transition()
-        .attr('x', function (d, i) { return xScale(i); })
-        .attr('width', xScale.bandwidth());
+        .attr('x', (d, i: any) => x(i))
+        .attr('width', x.bandwidth());
     }
 
-  }
-  bumps(m) {
-    const values = []
-    let i, j, w, x, y, z;
+    // tslint:disable-next-line:no-shadowed-variable
+    function bumps(m) {
+      // tslint:disable-next-line:prefer-const
+      const values = [];
+      // tslint:disable-next-line:no-shadowed-variable
+      let i, j, w, x, y, z;
 
-    for (i = 0; i < m; ++i) {
-      values[i] = 0.1 + 0.1 * Math.random();
-    }
-
-    for (j = 0; j < 5; ++j) {
-      x = 1 / (0.1 + Math.random());
-      y = 2 * Math.random() - 0.5;
-      z = 10 / (0.1 + Math.random());
-      for (i = 0; i < m; i++) {
-        w = (i / m - y) * z;
-        values[i] += x * Math.exp(-w * w);
+      // Initialize with uniform random values in [0.1, 0.2).
+      for (i = 0; i < m; ++i) {
+        values[i] = 0.1 + 0.1 * Math.random();
       }
+
+      // Add five random bumps.
+      for (j = 0; j < 5; ++j) {
+        x = 1 / (0.1 + Math.random());
+        y = 2 * Math.random() - 0.5;
+        z = 10 / (0.1 + Math.random());
+        for (i = 0; i < m; i++) {
+          w = (i / m - y) * z;
+          values[i] += x * Math.exp(-w * w);
+        }
+      }
+
+      // Ensure all values are positive.
+      for (i = 0; i < m; ++i) {
+        values[i] = Math.max(0, values[i]);
+      }
+
+      return values;
     }
 
-    for (i = 0; i < m; ++i) {
-      values[i] = Math.max(0, values[i]);
-    }
 
-    return values;
   }
+
 }
