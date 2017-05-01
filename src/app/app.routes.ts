@@ -8,7 +8,7 @@ export const ROUTES: Routes =
   [
     { path: '', component: BarDemoComponent },
     { path: 'barchart', component: BarDemoComponent },
-    { path: 'linechart', component: LineDemoComponent },
+   // { path: 'linechart', component: LineDemoComponent },
     { path: 'stackedtogroupedbar', component: StackedBarDemoComponent },
     { path: '*', component: BarDemoComponent },
 

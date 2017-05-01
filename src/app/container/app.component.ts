@@ -1,4 +1,3 @@
-import { D3Service, D3 } from '../shared/d3';
 import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
@@ -11,7 +10,7 @@ export class AppComponent {
 
   private links = {
     barchart: ['/barchart'],
-    linechart: ['/linechart'],
+  //  linechart: ['/linechart'],
     stackedtogroupedbar: ['/stackedtogroupedbar']
   }
 

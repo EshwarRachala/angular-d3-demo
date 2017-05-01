@@ -1,4 +1,4 @@
-import { D3Service, D3 } from '../../shared/d3';
+import { D3Service, D3 } from '@angular/d3';
 import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-line-demo',
@@ -14,20 +14,17 @@ export class LineDemoComponent implements OnInit {
     this.d3 = d3service.getD3();
   }
   ngOnInit() {
-    setTimeout(() => {
-      this.generateData();
-      setInterval(() => this.generateData(), 3000);
-    }, 1000);
+    // setTimeout(() => {
+    //   this.generateData();
+    //   setInterval(() => this.generateData(), 3000);
+    // }, 1000);
   }
 
   generateData() {
     this.chartData = [];
 
-    for (let i = 0; i < (8 + Math.floor(Math.random() * 10)); i++) {
-      this.chartData.push([
-        `Index ${i}`,
-        Math.floor(Math.random() * 100)
-      ]);
+    for (let i = 0; i < 100; i++) {
+      this.chartData.push({x: i, y: Math.sin(i /  10)});
     }
   }
 }
