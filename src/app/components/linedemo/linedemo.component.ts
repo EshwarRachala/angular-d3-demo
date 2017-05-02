@@ -14,17 +14,17 @@ export class LineDemoComponent implements OnInit {
     this.d3 = d3service.getD3();
   }
   ngOnInit() {
-    // setTimeout(() => {
-    //   this.generateData();
-    //   setInterval(() => this.generateData(), 3000);
-    // }, 1000);
+    setTimeout(() => {
+      this.generateData();
+      setInterval(() => this.generateData(), 3000);
+    }, 1000);
   }
 
   generateData() {
     this.chartData = [];
 
     for (let i = 0; i < 100; i++) {
-      this.chartData.push({x: i, y: Math.sin(i /  10)});
+      this.chartData.push({a: i, b: Math.sin(i /  10)});
     }
   }
 }

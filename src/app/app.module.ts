@@ -10,7 +10,7 @@ import { AppComponent } from './container/app.component';
 import { ROUTES } from './app.routes';
 import { RouterModule } from '@angular/router';
 
-import { D3Module, D3Service } from '@angular/d3';
+import { D3Module } from '@angular/d3';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,6 @@ import { D3Module, D3Service } from '@angular/d3';
     RouterModule.forRoot(ROUTES),
     D3Module
   ],
-  providers: [D3Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
