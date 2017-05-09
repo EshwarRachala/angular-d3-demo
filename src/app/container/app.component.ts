@@ -10,8 +10,9 @@ export class AppComponent {
 
   private links = {
     barchart: ['/barchart'],
-   linechart: ['/linechart'],
-    stackedtogroupedbar: ['/stackedtogroupedbar']
+    linechart: ['/linechart'],
+    stackedtogroupedbar: ['/stackedtogroupedbar'],
+    multibar: ['./multibar']
   }
 
 }

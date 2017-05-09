@@ -1,3 +1,4 @@
+import { MultiBarComponent } from './components/multibardemo/multibar.component';
 import { LineDemoComponent } from './components/linedemo/linedemo.component';
 import { StackedBarDemoComponent } from './components/stackedtogroupedbar/stackedbardemo.component';
 import { BarDemoComponent } from './components/bardemo/bardemo.component';
@@ -18,6 +19,7 @@ import { D3Module } from '@angular/d3';
     BarDemoComponent,
     StackedBarDemoComponent,
     LineDemoComponent,
+    MultiBarComponent
   ],
   imports: [
     BrowserModule,
