@@ -8,7 +8,7 @@ import { AppComponent } from './container/app.component';
 import { ROUTES } from './app.routes';
 import { RouterModule } from '@angular/router';
 
-import { D3Module,D3Service } from '@angular/nvd3';
+import { ChartModule, ChartService } from '@angular/nvd3';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { D3Module,D3Service } from '@angular/nvd3';
     FormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES),
-    D3Module
+    ChartModule
   ],
   bootstrap: [AppComponent]
 })

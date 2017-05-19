@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { D3Service } from '@angular/nvd3';
+import { ChartService } from '@angular/nvd3';
 
 @Component({
   selector: 'app-demo',
@@ -8,8 +8,8 @@ import { D3Service } from '@angular/nvd3';
 
 export class DemoComponent implements OnInit {
   private nv: any;
-  constructor(private srvc: D3Service) {
-    this.nv = srvc.getnv();
+  constructor(private srvc: ChartService) {
+    this.nv = srvc.getnvD3();
     // tslint:disable-next-line:no-debugger
     debugger;
   }
