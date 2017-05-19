@@ -1,17 +1,11 @@
+import { DemoComponent } from './components/demo.component';
 import { Routes } from '@angular/router';
-import { BarDemoComponent } from './components/bardemo/bardemo.component';
-import { StackedBarDemoComponent } from './components/stackedtogroupedbar/stackedbardemo.component';
-import { LineDemoComponent } from './components/linedemo/linedemo.component';
-import { MultiBarComponent } from './components/multibardemo/multibar.component';
 
 
 export const ROUTES: Routes =
   [
-    { path: '', component: BarDemoComponent },
-    { path: 'barchart', component: BarDemoComponent },
-    { path: 'linechart', component: LineDemoComponent },
-    { path: 'stackedtogroupedbar', component: StackedBarDemoComponent },
-    { path: 'multibar', component: MultiBarComponent },
-    { path: '*', component: BarDemoComponent },
+    { path: '', component: DemoComponent },
+    { path: 'demo', component: DemoComponent },
+    { path: '*', component: DemoComponent },
 
   ];

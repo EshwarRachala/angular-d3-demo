@@ -9,10 +9,7 @@ export class AppComponent {
   title = 'Angular D3 components';
 
   private links = {
-    barchart: ['/barchart'],
-    linechart: ['/linechart'],
-    stackedtogroupedbar: ['/stackedtogroupedbar'],
-    multibar: ['./multibar']
+    demo: ['/demo'],
   }
 
 }
