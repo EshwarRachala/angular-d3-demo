@@ -8,7 +8,7 @@ import { AppComponent } from './container/app.component';
 import { ROUTES } from './app.routes';
 import { RouterModule } from '@angular/router';
 
-import { ChartModule, ChartService } from '@angular/nvd3';
+import { ChartModule, ChartService } from 'ngnvd3';
 
 @NgModule({
   declarations: [

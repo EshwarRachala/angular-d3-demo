@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { ChartService } from '@angular/nvd3';
+import { ChartModule, ChartService } from 'ngnvd3';
 
 @Component({
   selector: 'app-demo',
