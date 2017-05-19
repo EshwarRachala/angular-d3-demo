@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { D3Service } from '@angular/nvd3';
 
 @Component({
   selector: 'app-demo',
@@ -6,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class DemoComponent implements OnInit {
-  constructor() { }
+  private nv: any;
+  constructor(private srvc: D3Service) {
+    this.nv = srvc.getnv();
+    // tslint:disable-next-line:no-debugger
+    debugger;
+  }
 
-  ngOnInit() { }
+  ngOnInit() {
+    // tslint:disable-next-line:no-debugger
+    // debugger;
+  }
 }

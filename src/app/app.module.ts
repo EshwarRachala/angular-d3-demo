@@ -8,7 +8,7 @@ import { AppComponent } from './container/app.component';
 import { ROUTES } from './app.routes';
 import { RouterModule } from '@angular/router';
 
-import { D3Module } from '@angular/nvd3';
+import { D3Module,D3Service } from '@angular/nvd3';
 
 @NgModule({
   declarations: [
