@@ -1,11 +1,11 @@
-import { DemoComponent } from './components/demo.component';
 import { Routes } from '@angular/router';
+import { BulletChartComponent } from './components/bullet-chart.component';
 
 
 export const ROUTES: Routes =
   [
-    { path: '', component: DemoComponent },
-    { path: 'demo', component: DemoComponent },
-    { path: '*', component: DemoComponent },
+    { path: '', component: BulletChartComponent },
+    { path: 'bulletchart', component: BulletChartComponent },
+    { path: '*', component: BulletChartComponent },
 
   ];

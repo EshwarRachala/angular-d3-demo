@@ -2,11 +2,11 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { ChartModule, ChartService } from 'ngnvd3';
 
 @Component({
-  selector: 'app-demo',
-  templateUrl: 'demo.component.html'
+  selector: 'app-bullet-chart',
+  templateUrl: 'bullet-chart.component.html'
 })
 
-export class DemoComponent implements OnInit {
+export class BulletChartComponent implements OnInit {
   private nv: any;
   private d3: any;
   @ViewChild('chart') private chartContainer: ElementRef;

@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'Angular D3 components';
 
   private links = {
-    demo: ['/demo'],
+    bulletchart: ['/bulletchart'],
   }
 
 }

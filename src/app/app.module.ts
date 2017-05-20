@@ -1,4 +1,3 @@
-import { DemoComponent } from './components/demo.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -9,11 +8,12 @@ import { ROUTES } from './app.routes';
 import { RouterModule } from '@angular/router';
 
 import { ChartModule, ChartService } from 'ngnvd3';
+import { BulletChartComponent } from './components/bullet-chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DemoComponent,
+    BulletChartComponent,
   ],
   imports: [
     BrowserModule,
