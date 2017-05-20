@@ -1,3 +1,4 @@
+import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +15,7 @@ import { BulletChartComponent } from './components/bullet-chart/bullet-chart.com
   declarations: [
     AppComponent,
     BulletChartComponent,
+    BarChartComponent
   ],
   imports: [
     BrowserModule,

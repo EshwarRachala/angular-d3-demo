@@ -10,6 +10,7 @@ export class AppComponent {
 
   private links = {
     bulletchart: ['/bulletchart'],
+    barchart: ['/barchart']
   }
 
 }
