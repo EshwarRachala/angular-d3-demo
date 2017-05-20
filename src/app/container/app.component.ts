@@ -12,6 +12,7 @@ export class AppComponent {
     MutltiBar: ['/HMBchart'],
     HorMultiBar: ['/MultiBar'],
     DiscreteBar: ['/barchart'],
+    SimpleLine: ['/SimpleLine'],
     bulletchart: ['/bulletchart'],
   }
 

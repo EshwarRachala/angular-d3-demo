@@ -1,3 +1,4 @@
+import { SimpleLineChartComponent } from './components/simple-line/simpleline.component';
 import { MultiBarChartComponent } from './components/multi-bar/bar.component';
 import { HMBChartComponent } from './components/hor-mul-bar/hmb.component';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
@@ -19,7 +20,8 @@ import { BulletChartComponent } from './components/bullet-chart/bullet-chart.com
     BulletChartComponent,
     BarChartComponent,
     HMBChartComponent,
-    MultiBarChartComponent
+    MultiBarChartComponent,
+    SimpleLineChartComponent
   ],
   imports: [
     BrowserModule,
