@@ -1,3 +1,4 @@
+import { StackedAreaComponent } from './components/stacked-area/stackedarea.component';
 import { SimpleLineChartComponent } from './components/simple-line/simpleline.component';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { Routes } from '@angular/router';
@@ -14,6 +15,7 @@ export const ROUTES: Routes =
     { path: 'MultiBar', component: MultiBarChartComponent },
     { path: 'bulletchart', component: BulletChartComponent },
     { path: 'stackgroupedmultibar', component: StackedGroupedMultiBarComponent },
+    { path: 'stackedarea', component: StackedAreaComponent },
     { path: 'SimpleLine', component: SimpleLineChartComponent },
     { path: 'barchart', component: BarChartComponent },
     { path: '*', component: HMBChartComponent }

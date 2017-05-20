@@ -14,6 +14,7 @@ export class AppComponent {
     stackgroupedmultibar: ['/stackgroupedmultibar'],
     DiscreteBar: ['/barchart'],
     SimpleLine: ['/SimpleLine'],
+    stackedarea: ['/stackedarea'],
     bulletchart: ['/bulletchart'],
   }
 
