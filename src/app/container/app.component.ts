@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'Angular D3 components';
+  title = 'Charts';
 
   private links = {
     MutltiBar: ['/HMBchart'],
