@@ -3,7 +3,7 @@ import { ChartService } from 'ngnvd3';
 
 @Component({
   selector: 'app-simple-line-chart',
-  template: `<div class="gallery with-transitions" id="chart1"></div>`
+  template: `<div class="gallery with-transitions" id="chart1"><svg height="500"></svg></div>`
 })
 export class SimpleLineChartComponent implements OnInit {
   private nv: any;
@@ -76,11 +76,11 @@ export class SimpleLineChartComponent implements OnInit {
       })
       ;
 
-    d3.select('#chart1')
-      .append('svg')
-      .datum(data)
+    d3.select('#chart1 svg')
+      .datum(this.data)
       .call(chart);
-    // Update the chart when window resizes.
+
+
     nv.utils.windowResize(chart.update);
   }
 
