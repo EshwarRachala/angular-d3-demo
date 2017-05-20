@@ -9,10 +9,10 @@ export class AppComponent {
   title = 'Angular D3 components';
 
   private links = {
-    HMBchart: ['/HMBchart'],
-    MultiBar: ['/MultiBar'],
+    MutltiBar: ['/HMBchart'],
+    HorMultiBar: ['/MultiBar'],
+    DiscreteBar: ['/barchart'],
     bulletchart: ['/bulletchart'],
-    barchart: ['/barchart']
   }
 
 }

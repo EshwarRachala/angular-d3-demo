@@ -4,7 +4,7 @@ import { ChartService } from 'ngnvd3';
 @Component({
   moduleId: module.id,
   selector: 'app-hmb-chart',
-  template: '<div class="gallery with-transitions" id="chart1"><svg height="400"></svg></div>'
+  template: '<div class="gallery with-transitions" id="chart1"><svg height="600"></svg></div>'
 })
 export class HMBChartComponent implements OnInit {
   private nv: any;
