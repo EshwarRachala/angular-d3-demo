@@ -9,13 +9,8 @@ import { ChartService } from 'ngnvd3';
 export class BarChartComponent implements OnInit {
   private nv: any;
   private d3: any;
-  @ViewChild('chart') private chartContainer: ElementRef;
-  private height: number;
-  private width: number;
-  private margin = { top: 5, right: 40, bottom: 20, left: 120 };
 
   private data: any;
-
 
   constructor(private service: ChartService) {
     this.nv = service.getnvD3();
@@ -65,24 +60,17 @@ export class BarChartComponent implements OnInit {
     const nv = this.nv;
     const d3 = this.d3;
     const data = this.data;
-    nv.addGraph(function () {
-      const chart = nv.models.discreteBarChart()
-        .x(function (d) { return d.label })
-        .y(function (d) { return d.value })
-        .staggerLabels(true)
-        .showValues(true)
-        .duration(250)
-        ;
-      d3.select('#chart1 svg')
-        .datum(data)
-        .call(chart);
+    const chart = nv.models.discreteBarChart()
+      .x(function (d) { return d.label })
+      .y(function (d) { return d.value })
+      .staggerLabels(true)
+      .showValues(true)
+      .duration(250)
+      ;
+    d3.select('#chart1 svg')
+      .datum(data)
+      .call(chart);
 
-      nv.utils.windowResize(chart.update);
-      return chart;
-    });
-
-
-
+    nv.utils.windowResize(chart.update);
   }
-
 }
