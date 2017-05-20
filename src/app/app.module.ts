@@ -8,7 +8,7 @@ import { ROUTES } from './app.routes';
 import { RouterModule } from '@angular/router';
 
 import { ChartModule, ChartService } from 'ngnvd3';
-import { BulletChartComponent } from './components/bullet-chart.component';
+import { BulletChartComponent } from './components/bullet-chart/bullet-chart.component';
 
 @NgModule({
   declarations: [

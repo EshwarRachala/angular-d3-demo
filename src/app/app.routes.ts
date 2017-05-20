@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { BulletChartComponent } from './components/bullet-chart.component';
+import { BulletChartComponent } from './components/bullet-chart/bullet-chart.component';
 
 
 export const ROUTES: Routes =
