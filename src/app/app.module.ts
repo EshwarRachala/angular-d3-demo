@@ -1,3 +1,4 @@
+import { MultiBarChartComponent } from './components/multi-bar/bar.component';
 import { HMBChartComponent } from './components/hor-mul-bar/hmb.component';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,7 +18,8 @@ import { BulletChartComponent } from './components/bullet-chart/bullet-chart.com
     AppComponent,
     BulletChartComponent,
     BarChartComponent,
-    HMBChartComponent
+    HMBChartComponent,
+    MultiBarChartComponent
   ],
   imports: [
     BrowserModule,

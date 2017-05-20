@@ -10,6 +10,7 @@ export class AppComponent {
 
   private links = {
     HMBchart: ['/HMBchart'],
+    MultiBar: ['/MultiBar'],
     bulletchart: ['/bulletchart'],
     barchart: ['/barchart']
   }
