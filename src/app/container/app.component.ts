@@ -11,6 +11,7 @@ export class AppComponent {
   private links = {
     MutltiBar: ['/HMBchart'],
     HorMultiBar: ['/MultiBar'],
+    stackgroupedmultibar: ['/stackgroupedmultibar'],
     DiscreteBar: ['/barchart'],
     SimpleLine: ['/SimpleLine'],
     bulletchart: ['/bulletchart'],

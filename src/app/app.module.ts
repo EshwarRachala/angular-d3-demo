@@ -1,3 +1,4 @@
+import { StackedGroupedMultiBarComponent } from './components/stacked-grouped-multi-bar/stacked-grouped-multi-bar';
 import { SimpleLineChartComponent } from './components/simple-line/simpleline.component';
 import { MultiBarChartComponent } from './components/multi-bar/bar.component';
 import { HMBChartComponent } from './components/hor-mul-bar/hmb.component';
@@ -21,7 +22,8 @@ import { BulletChartComponent } from './components/bullet-chart/bullet-chart.com
     BarChartComponent,
     HMBChartComponent,
     MultiBarChartComponent,
-    SimpleLineChartComponent
+    SimpleLineChartComponent,
+    StackedGroupedMultiBarComponent
   ],
   imports: [
     BrowserModule,
