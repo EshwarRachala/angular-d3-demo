@@ -4,7 +4,7 @@ import { ChartService } from 'ngnvd3';
 @Component({
   moduleId: module.id,
   selector: 'app-bar-chart',
-  template: '<div class="gallery with-transitions" id="chart1"><svg></svg></div>'
+  template: '<div class="gallery with-transitions" id="chart1"><svg height="400"></svg></div>'
 })
 export class BarChartComponent implements OnInit {
   private nv: any;
@@ -65,8 +65,8 @@ export class BarChartComponent implements OnInit {
       .y(function (d) { return d.value })
       .staggerLabels(true)
       .showValues(true)
-      .duration(250)
-      ;
+      .duration(250);
+
     d3.select('#chart1 svg')
       .datum(data)
       .call(chart);
