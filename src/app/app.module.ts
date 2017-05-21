@@ -19,6 +19,7 @@ import { ChartModule, ChartService } from 'ngnvd3';
 import { BulletChartComponent } from './components/bullet-chart/bullet-chart.component';
 import { CumulativeLineComponent } from './components/cumulative-line/cumulative-line.component';
 import { PieChartComponent } from './components/pie-chart/pie.component';
+import {ScatteredBubbleChartComponent} from './components/scattered-bubble/scattered-bubble.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { PieChartComponent } from './components/pie-chart/pie.component';
     LineViewFinderChartComponent,
     CumulativeLineComponent,
     PieChartComponent,
-    LineBarChartComponent
+    LineBarChartComponent,
+    ScatteredBubbleChartComponent
   ],
   imports: [
     BrowserModule,

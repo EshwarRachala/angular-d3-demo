@@ -19,7 +19,8 @@ export class AppComponent {
     viewfinder: ['/viewfinder'],
     bulletchart: ['/bulletchart'],
     linebar: ['/linebar'],
-    pie: ['/pie']
+    pie: ['/pie'],
+    scatteredbbl: ['/scatteredbbl']
   }
 
 }

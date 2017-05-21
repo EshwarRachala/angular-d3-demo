@@ -10,7 +10,7 @@ import { HMBChartComponent } from './components/hor-mul-bar/hmb.component';
 import { MultiBarChartComponent } from './components/multi-bar/bar.component';
 import { StackedGroupedMultiBarComponent } from './components/stacked-grouped-multi-bar/stacked-grouped-multi-bar';
 import { LineViewFinderChartComponent } from './components/LineView/lineview.component';
-
+import {ScatteredBubbleChartComponent} from './components/scattered-bubble/scattered-bubble.component';
 
 export const ROUTES: Routes =
   [
@@ -26,5 +26,6 @@ export const ROUTES: Routes =
     { path: 'cumulativeline', component: CumulativeLineComponent },
     { path: 'linebar', component: LineBarChartComponent },
     { path: 'pie', component: PieChartComponent },
+    { path: 'scatteredbbl', component: ScatteredBubbleChartComponent },
     { path: '*', component: HMBChartComponent }
   ];

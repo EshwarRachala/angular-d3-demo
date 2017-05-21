@@ -16,6 +16,10 @@ body {
     padding: 8px;
 }
 
+.mdl-layout__header-row {
+    padding: 0 4px 0 4px;
+}
+
 .mdl-navigation__link--icon>.material-icons {
     margin-right: 3px;
     margin-top: 8px;
