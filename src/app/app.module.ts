@@ -1,7 +1,11 @@
-import { MultiBarComponent } from './components/multibardemo/multibar.component';
-import { LineDemoComponent } from './components/linedemo/linedemo.component';
-import { StackedBarDemoComponent } from './components/stackedtogroupedbar/stackedbardemo.component';
-import { BarDemoComponent } from './components/bardemo/bardemo.component';
+import { LineBarChartComponent } from './components/Line-bar/line-bar.component';
+import { LineViewFinderChartComponent } from './components/LineView/lineview.component';
+import { StackedAreaComponent } from './components/stacked-area/stackedarea.component';
+import { StackedGroupedMultiBarComponent } from './components/stacked-grouped-multi-bar/stacked-grouped-multi-bar';
+import { SimpleLineChartComponent } from './components/simple-line/simpleline.component';
+import { MultiBarChartComponent } from './components/multi-bar/bar.component';
+import { HMBChartComponent } from './components/hor-mul-bar/hmb.component';
+import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -11,22 +15,44 @@ import { AppComponent } from './container/app.component';
 import { ROUTES } from './app.routes';
 import { RouterModule } from '@angular/router';
 
-import { D3Module } from '@angular/d3';
+import { ChartModule, ChartService } from 'ngnvd3';
+import { BulletChartComponent } from './components/bullet-chart/bullet-chart.component';
+import { CumulativeLineComponent } from './components/cumulative-line/cumulative-line.component';
+import { PieChartComponent } from './components/pie-chart/pie.component';
+import {ScatteredBubbleChartComponent} from './components/scattered-bubble/scattered-bubble.component';
+import { CandleStickChartComponent } from './components/candleStick/candle-stick.component';
+import {BoxPlotComponent} from './components/boxplot/boxplot.component';
+import { OhlcChartComponent} from './components/Ohlc/ohlc.component';
+import {SunBurstComponent} from './components/Sunburst/sunburst.componet';
+import {ForceComponent} from './components/force/force.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BarDemoComponent,
-    StackedBarDemoComponent,
-    LineDemoComponent,
-    MultiBarComponent
+    BulletChartComponent,
+    BarChartComponent,
+    HMBChartComponent,
+    MultiBarChartComponent,
+    SimpleLineChartComponent,
+    StackedGroupedMultiBarComponent,
+    StackedAreaComponent,
+    LineViewFinderChartComponent,
+    CumulativeLineComponent,
+    PieChartComponent,
+    LineBarChartComponent,
+    ScatteredBubbleChartComponent,
+    CandleStickChartComponent,
+    BoxPlotComponent,
+    OhlcChartComponent,
+    SunBurstComponent,
+    ForceComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES),
-    D3Module
+    ChartModule
   ],
   bootstrap: [AppComponent]
 })

@@ -6,13 +6,26 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'Angular D3 components';
+  title = 'Charts';
 
   private links = {
-    barchart: ['/barchart'],
-    linechart: ['/linechart'],
-    stackedtogroupedbar: ['/stackedtogroupedbar'],
-    multibar: ['./multibar']
+    MutltiBar: ['/HMBchart'],
+    HorMultiBar: ['/MultiBar'],
+    stackgroupedmultibar: ['/stackgroupedmultibar'],
+    DiscreteBar: ['/barchart'],
+    SimpleLine: ['/SimpleLine'],
+    stackedarea: ['/stackedarea'],
+    cumulativeline: ['/cumulativeline'],
+    viewfinder: ['/viewfinder'],
+    bulletchart: ['/bulletchart'],
+    linebar: ['/linebar'],
+    pie: ['/pie'],
+    scatteredbbl: ['/scatteredbbl'],
+    candlestick: ['/candlestick'],
+    boxplot: ['/boxplot'],
+    force: ['/force'],
+    Sunburst: ['/Sunburst'],
+    Ohlc: ['/Ohlc']
   }
 
 }
