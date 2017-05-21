@@ -1,3 +1,4 @@
+import { PieChartComponent } from './components/pie-chart/pie.component';
 import { CumulativeLineComponent } from './components/cumulative-line/cumulative-line.component';
 import { StackedAreaComponent } from './components/stacked-area/stackedarea.component';
 import { SimpleLineChartComponent } from './components/simple-line/simpleline.component';
@@ -22,5 +23,6 @@ export const ROUTES: Routes =
     { path: 'SimpleLine', component: SimpleLineChartComponent },
     { path: 'viewfinder', component: LineViewFinderChartComponent },
     { path: 'cumulativeline', component: CumulativeLineComponent },
+    { path: 'pie', component: PieChartComponent },
     { path: '*', component: HMBChartComponent }
   ];

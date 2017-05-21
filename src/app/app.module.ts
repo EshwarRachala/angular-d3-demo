@@ -17,6 +17,7 @@ import { RouterModule } from '@angular/router';
 import { ChartModule, ChartService } from 'ngnvd3';
 import { BulletChartComponent } from './components/bullet-chart/bullet-chart.component';
 import { CumulativeLineComponent } from './components/cumulative-line/cumulative-line.component';
+import { PieChartComponent } from './components/pie-chart/pie.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CumulativeLineComponent } from './components/cumulative-line/cumulative
     StackedGroupedMultiBarComponent,
     StackedAreaComponent,
     LineViewFinderChartComponent,
-    CumulativeLineComponent
+    CumulativeLineComponent,
+    PieChartComponent
   ],
   imports: [
     BrowserModule,
