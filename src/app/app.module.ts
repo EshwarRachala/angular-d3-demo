@@ -22,11 +22,9 @@ import { PieChartComponent } from './components/pie-chart/pie.component';
 import {ScatteredBubbleChartComponent} from './components/scattered-bubble/scattered-bubble.component';
 import { CandleStickChartComponent } from './components/candleStick/candle-stick.component';
 import {BoxPlotComponent} from './components/boxplot/boxplot.component';
-
 import { OhlcChartComponent} from './components/Ohlc/ohlc.component';
-
 import {SunBurstComponent} from './components/Sunburst/sunburst.componet';
-
+import {ForceComponent} from './components/force/force.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +44,8 @@ import {SunBurstComponent} from './components/Sunburst/sunburst.componet';
     CandleStickChartComponent,
     BoxPlotComponent,
     OhlcChartComponent,
-    SunBurstComponent
+    SunBurstComponent,
+    ForceComponent
   ],
   imports: [
     BrowserModule,

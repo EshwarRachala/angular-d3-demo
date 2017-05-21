@@ -16,6 +16,8 @@ import {BoxPlotComponent} from './components/boxplot/boxplot.component';
 import { OhlcChartComponent} from './components/Ohlc/ohlc.component';
 import {SunBurstComponent} from './components/Sunburst/sunburst.componet';
 
+import {ForceComponent} from './components/force/force.component';
+
 export const ROUTES: Routes =
   [
     { path: '', component: HMBChartComponent },
@@ -33,7 +35,7 @@ export const ROUTES: Routes =
     { path: 'scatteredbbl', component: ScatteredBubbleChartComponent },
     { path: 'candlestick', component: CandleStickChartComponent },
     { path: 'boxplot', component: BoxPlotComponent },
-    { path: 'force', component: LineViewFinderChartComponent },
+    { path: 'force', component: ForceComponent },
     { path: 'Sunburst', component: SunBurstComponent },
     { path: 'Ohlc', component: OhlcChartComponent },
     { path: '*', component: HMBChartComponent }
