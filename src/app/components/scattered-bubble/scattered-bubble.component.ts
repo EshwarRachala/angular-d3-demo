@@ -4,9 +4,10 @@ import { ChartService } from 'ngnvd3';
 @Component({
   selector: 'app-scattered-bubble-chart',
   template: `<div class="gallery with-transitions" id="chart">
-                <svg height="500"></svg>
+                <svg height="600"></svg>
              </div>`
 })
+
 export class ScatteredBubbleChartComponent implements OnInit {
   private nv: any;
   private d3: any;
