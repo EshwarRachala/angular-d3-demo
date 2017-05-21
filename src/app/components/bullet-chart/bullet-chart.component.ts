@@ -3,13 +3,12 @@ import { ChartModule, ChartService } from 'ngnvd3';
 
 @Component({
   selector: 'app-bullet-chart',
-  templateUrl: 'bullet-chart.component.html'
+  template: `<div class="gallery with-transitions" id="chart"></div>`
 })
 
 export class BulletChartComponent implements OnInit {
   private nv: any;
   private d3: any;
-  @ViewChild('chart') private chartContainer: ElementRef;
   private height: number;
   private width: number;
   private margin = { top: 5, right: 40, bottom: 20, left: 120 };
@@ -21,14 +20,14 @@ export class BulletChartComponent implements OnInit {
       'markerLines': [270]
     },
     {
+      'title': 'Satisfaction', 'subtitle': 'out of 5',
+      'ranges': [3.5, 4.25, 5], 'measures': [3.2, 4.0],
+      'markers': [4.4], 'markerLines': [3.8]
+    },
+    {
       'title': 'Order Size', 'subtitle': 'US$, average',
       'ranges': [350, 500, 600], 'measures': [100], 'markers': [550],
       'markerLines': [530]
-    },
-    {
-      'title': 'Satisfaction', 'subtitle': 'out of 5',
-      'ranges': [3.5, 4.25, 5], 'measures': [3.2, 4.7],
-      'markers': [4.4], 'markerLines': [3.8]
     }
   ];
 
@@ -39,16 +38,13 @@ export class BulletChartComponent implements OnInit {
 
   ngOnInit() {
     // tslint:disable-next-line:no-debugger
-  //  debugger;
-    const element = this.chartContainer.nativeElement;
-    this.width = element.clientWidth;
+    //  debugger;
     this.height = 80;
+    this.width = 1200;
 
-    const chart = this.nv.models.bulletChart()
-      .width(this.width - this.margin.right - this.margin.left)
-      .height(this.height - this.margin.top - this.margin.bottom);
+    const chart = this.nv.models.bulletChart();
 
-    const vis = this.d3.select(element)
+    const vis = this.d3.select('#chart')
       .selectAll('svg')
       .data(this.data)
       .enter()
