@@ -1,3 +1,14 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+import { ROUTES } from './app.routes';
+import { RouterModule } from '@angular/router';
+
+import { ChartModule, ChartService } from 'ngnvd3';
+
+import { AppComponent } from './container/app.component';
 import { LineBarChartComponent } from './components/Line-bar/line-bar.component';
 import { LineViewFinderChartComponent } from './components/LineView/lineview.component';
 import { StackedAreaComponent } from './components/stacked-area/stackedarea.component';
@@ -6,16 +17,6 @@ import { SimpleLineChartComponent } from './components/simple-line/simpleline.co
 import { MultiBarChartComponent } from './components/multi-bar/bar.component';
 import { HMBChartComponent } from './components/hor-mul-bar/hmb.component';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { AppComponent } from './container/app.component';
-
-import { ROUTES } from './app.routes';
-import { RouterModule } from '@angular/router';
-
-import { ChartModule, ChartService } from 'ngnvd3';
 import { BulletChartComponent } from './components/bullet-chart/bullet-chart.component';
 import { CumulativeLineComponent } from './components/cumulative-line/cumulative-line.component';
 import { PieChartComponent } from './components/pie-chart/pie.component';

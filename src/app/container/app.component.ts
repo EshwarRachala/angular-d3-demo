@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Charts';
 
-  private links = {
+  public links = {
     MutltiBar: ['/HMBchart'],
     HorMultiBar: ['/MultiBar'],
     stackgroupedmultibar: ['/stackgroupedmultibar'],
