@@ -5,7 +5,7 @@ import { ChartService } from 'ngnvd3';
   moduleId: module.id,
   selector: 'app-stacked-grouped-multi-bar',
   template: `<div class="gallery with-transitions" id="chart1">
-              <svg height="500"></svg>
+              <svg height="600"></svg>
             </div>`
 })
 export class StackedGroupedMultiBarComponent implements OnInit {
