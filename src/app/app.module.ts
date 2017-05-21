@@ -1,3 +1,4 @@
+import { LineBarChartComponent } from './components/Line-bar/line-bar.component';
 import { LineViewFinderChartComponent } from './components/LineView/lineview.component';
 import { StackedAreaComponent } from './components/stacked-area/stackedarea.component';
 import { StackedGroupedMultiBarComponent } from './components/stacked-grouped-multi-bar/stacked-grouped-multi-bar';
@@ -31,7 +32,8 @@ import { PieChartComponent } from './components/pie-chart/pie.component';
     StackedAreaComponent,
     LineViewFinderChartComponent,
     CumulativeLineComponent,
-    PieChartComponent
+    PieChartComponent,
+    LineBarChartComponent
   ],
   imports: [
     BrowserModule,

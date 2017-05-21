@@ -18,6 +18,7 @@ export class AppComponent {
     cumulativeline: ['/cumulativeline'],
     viewfinder: ['/viewfinder'],
     bulletchart: ['/bulletchart'],
+    linebar: ['/linebar'],
     pie: ['/pie']
   }
 
