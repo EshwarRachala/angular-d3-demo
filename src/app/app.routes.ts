@@ -12,6 +12,8 @@ import { StackedGroupedMultiBarComponent } from './components/stacked-grouped-mu
 import { LineViewFinderChartComponent } from './components/LineView/lineview.component';
 import {ScatteredBubbleChartComponent} from './components/scattered-bubble/scattered-bubble.component';
 
+import { CandleStickChartComponent } from './components/candleStick/candle-stick.component';
+
 export const ROUTES: Routes =
   [
     { path: '', component: HMBChartComponent },
@@ -27,5 +29,6 @@ export const ROUTES: Routes =
     { path: 'linebar', component: LineBarChartComponent },
     { path: 'pie', component: PieChartComponent },
     { path: 'scatteredbbl', component: ScatteredBubbleChartComponent },
+    { path: 'candlestick', component: CandleStickChartComponent },
     { path: '*', component: HMBChartComponent }
   ];

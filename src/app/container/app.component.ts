@@ -20,7 +20,8 @@ export class AppComponent {
     bulletchart: ['/bulletchart'],
     linebar: ['/linebar'],
     pie: ['/pie'],
-    scatteredbbl: ['/scatteredbbl']
+    scatteredbbl: ['/scatteredbbl'],
+    candlestick: ['/candlestick']
   }
 
 }
