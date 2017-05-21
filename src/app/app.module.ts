@@ -21,6 +21,10 @@ import { CumulativeLineComponent } from './components/cumulative-line/cumulative
 import { PieChartComponent } from './components/pie-chart/pie.component';
 import {ScatteredBubbleChartComponent} from './components/scattered-bubble/scattered-bubble.component';
 import { CandleStickChartComponent } from './components/candleStick/candle-stick.component';
+import {BoxPlotComponent} from './components/boxplot/boxplot.component';
+
+import { OhlcChartComponent} from './components/Ohlc/ohlc.component';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +41,9 @@ import { CandleStickChartComponent } from './components/candleStick/candle-stick
     PieChartComponent,
     LineBarChartComponent,
     ScatteredBubbleChartComponent,
-    CandleStickChartComponent
+    CandleStickChartComponent,
+    BoxPlotComponent,
+    OhlcChartComponent
   ],
   imports: [
     BrowserModule,
