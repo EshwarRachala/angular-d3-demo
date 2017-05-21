@@ -6,7 +6,7 @@ import { ChartService } from 'ngnvd3';
   selector: 'app-bar-chart',
   template: '<div class="gallery with-transitions" id="chart1"><svg height="600"></svg></div>'
 })
-export class BarChartComponent implements OnInit {
+export class DiscreteBarChartComponent implements OnInit {
   private nv: any;
   private d3: any;
 

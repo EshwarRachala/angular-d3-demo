@@ -48,10 +48,10 @@ export class PieChartComponent implements OnInit {
       .donutRatio(0.35)     // Configure how big you want the donut hole size to be.
       ;
 
-       d3.select('#chart1 svg')
-        .datum(exampleData())
-        .transition().duration(350)
-        .call(chart1);
+    d3.select('#chart1 svg')
+      .datum(exampleData())
+      .transition().duration(350)
+      .call(chart1);
 
     function exampleData() {
       return [

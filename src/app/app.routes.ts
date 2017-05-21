@@ -1,13 +1,14 @@
+import { Routes } from '@angular/router';
+
 import { LineBarChartComponent } from './components/Line-bar/line-bar.component';
 import { PieChartComponent } from './components/pie-chart/pie.component';
 import { CumulativeLineComponent } from './components/cumulative-line/cumulative-line.component';
 import { StackedAreaComponent } from './components/stacked-area/stackedarea.component';
 import { SimpleLineChartComponent } from './components/simple-line/simpleline.component';
-import { BarChartComponent } from './components/bar-chart/bar-chart.component';
-import { Routes } from '@angular/router';
+import { DiscreteBarChartComponent } from './components/discrete-bar-chart/discrete-bar-chart.component';
 import { BulletChartComponent } from './components/bullet-chart/bullet-chart.component';
-import { HMBChartComponent } from './components/hor-mul-bar/hmb.component';
-import { MultiBarChartComponent } from './components/multi-bar/bar.component';
+import { VerMultiBarChartComponent } from './components/ver-mul-bar/vmb.component';
+import { HorMultiBarChartComponent } from './components/hor-multi-bar/hmb.component';
 import { StackedGroupedMultiBarComponent } from './components/stacked-grouped-multi-bar/stacked-grouped-multi-bar';
 import { LineViewFinderChartComponent } from './components/LineView/lineview.component';
 import {ScatteredBubbleChartComponent} from './components/scattered-bubble/scattered-bubble.component';
@@ -20,10 +21,10 @@ import {ForceComponent} from './components/force/force.component';
 
 export const ROUTES: Routes =
   [
-    { path: '', component: HMBChartComponent },
-    { path: 'HMBchart', component: HMBChartComponent },
-    { path: 'MultiBar', component: MultiBarChartComponent },
-    { path: 'barchart', component: BarChartComponent },
+    { path: '', component: VerMultiBarChartComponent },
+    { path: 'VerMutltiBar', component: VerMultiBarChartComponent },
+    { path: 'HorMultiBar', component: HorMultiBarChartComponent },
+    { path: 'DiscreteBar', component: DiscreteBarChartComponent },
     { path: 'bulletchart', component: BulletChartComponent },
     { path: 'stackgroupedmultibar', component: StackedGroupedMultiBarComponent },
     { path: 'stackedarea', component: StackedAreaComponent },
@@ -38,6 +39,6 @@ export const ROUTES: Routes =
     { path: 'force', component: ForceComponent },
     { path: 'Sunburst', component: SunBurstComponent },
     { path: 'Ohlc', component: OhlcChartComponent },
-    { path: '*', component: HMBChartComponent }
+    { path: '*', component: VerMultiBarChartComponent }
   ];
 

@@ -6,7 +6,7 @@ import { ChartService } from 'ngnvd3';
   selector: 'app-multi-bar-chart',
   template: `<div class="gallery with-transitions" id="chart1"><svg height="600"></svg></div>`
 })
-export class MultiBarChartComponent implements OnInit {
+export class HorMultiBarChartComponent implements OnInit {
   private nv: any;
   private d3: any;
 
@@ -110,17 +110,29 @@ export class MultiBarChartComponent implements OnInit {
     const chart = nv.models.multiBarHorizontalChart()
       .x(function (d) { return d.label })
       .y(function (d) { return d.value })
-      .margin({ top: 30, right: 20, bottom: 50, left: 175 })
+    //  .yErr(function (d) { return [-Math.abs(d.value * Math.random() * 0.3), Math.abs(d.value * Math.random() * 0.3)] })
       .showValues(true)
-      .showControls(true);
+      .barColor(d3.scale.category20().range())
+      .margin({ top: 30, right: 20, bottom: 50, left: 100  })
+      .duration(250)
+      .showControls(true)
+      .showLegend(true);
 
     chart.yAxis
       .tickFormat(d3.format(',.2f'));
+
+    chart.yAxis.axisLabel('Y Axis');
+    chart.xAxis.axisLabel('X Axis').axisLabelDistance(20);
 
     d3.select('#chart1 svg')
       .datum(data)
       .call(chart);
 
     nv.utils.windowResize(chart.update);
+
+    chart.dispatch.on('stateChange', function (e) { nv.log('New State:', JSON.stringify(e)); });
+    chart.state.dispatch.on('change', function (state) {
+      nv.log('state', JSON.stringify(state));
+    });
   }
 }

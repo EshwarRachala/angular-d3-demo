@@ -21,12 +21,12 @@ export class ScatteredBubbleChartComponent implements OnInit {
     const nv = this.nv;
     const d3 = this.d3;
 
- const chart = nv.models.scatterChart()
-                .showDistX(true)
-                .showDistY(true)
-                .useVoronoi(true)
-                .color(d3.scale.category10().range())
-                .duration(300);
+    const chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .useVoronoi(true)
+      .color(d3.scale.category10().range())
+      .duration(300);
 
 
     // Axis settings
@@ -34,27 +34,27 @@ export class ScatteredBubbleChartComponent implements OnInit {
     chart.yAxis.tickFormat(d3.format('.02f'));
 
     d3.select('#chart svg')
-    .datum(randomData(4, 40))
-    .call(chart);
+      .datum(randomData(4, 40))
+      .call(chart);
 
     nv.utils.windowResize(chart.update);
 
     function randomData(groups, points) {
-    const data: Array<{key: any, values: any}> = [],
-      shapes = ['circle', 'cross', 'triangle-up', 'triangle-down', 'diamond', 'square'],
-      random = d3.random.normal();
+      const data: Array<{ key: any, values: any }> = [],
+        shapes = ['circle', 'cross', 'triangle-up', 'triangle-down', 'diamond', 'square'],
+        random = d3.random.normal();
 
       for (let i = 0; i < groups; i++) {
         data.push({ key: 'Group ' + i, values: [] });
 
         for (let j = 0; j < points; j++) {
-            data[i].values.push({
-              x: random()
+          data[i].values.push({
+            x: random()
             , y: random()
             , size: Math.random()
             , shape: (Math.random() > 0.95) ? shapes[j % 6] : 'circle'
-            });
-      }
+          });
+        }
       }
 
       return data;

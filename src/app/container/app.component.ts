@@ -9,10 +9,10 @@ export class AppComponent {
   title = 'Charts';
 
   public links = {
-    MutltiBar: ['/HMBchart'],
-    HorMultiBar: ['/MultiBar'],
+    VerMutltiBar: ['/VerMutltiBar'],
+    HorMultiBar: ['/HorMultiBar'],
     stackgroupedmultibar: ['/stackgroupedmultibar'],
-    DiscreteBar: ['/barchart'],
+    DiscreteBar: ['/DiscreteBar'],
     SimpleLine: ['/SimpleLine'],
     stackedarea: ['/stackedarea'],
     cumulativeline: ['/cumulativeline'],

@@ -6,7 +6,7 @@ import { ChartService } from 'ngnvd3';
   selector: 'app-hmb-chart',
   template: '<div class="gallery with-transitions" id="chart1"><svg height="600"></svg></div>'
 })
-export class HMBChartComponent implements OnInit {
+export class VerMultiBarChartComponent implements OnInit {
   private nv: any;
   private d3: any;
   private data: any;
@@ -76,6 +76,7 @@ export class HMBChartComponent implements OnInit {
       .margin({ bottom: 100, left: 70 })
       .rotateLabels(45)
       .groupSpacing(0.1);
+
 
     chart.reduceXTicks(false).staggerLabels(true);
     chart.xAxis

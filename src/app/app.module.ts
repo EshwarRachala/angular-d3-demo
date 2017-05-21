@@ -14,9 +14,9 @@ import { LineViewFinderChartComponent } from './components/LineView/lineview.com
 import { StackedAreaComponent } from './components/stacked-area/stackedarea.component';
 import { StackedGroupedMultiBarComponent } from './components/stacked-grouped-multi-bar/stacked-grouped-multi-bar';
 import { SimpleLineChartComponent } from './components/simple-line/simpleline.component';
-import { MultiBarChartComponent } from './components/multi-bar/bar.component';
-import { HMBChartComponent } from './components/hor-mul-bar/hmb.component';
-import { BarChartComponent } from './components/bar-chart/bar-chart.component';
+import { HorMultiBarChartComponent } from './components/hor-multi-bar/hmb.component';
+import { VerMultiBarChartComponent } from './components/ver-mul-bar/vmb.component';
+import { DiscreteBarChartComponent } from './components/discrete-bar-chart/discrete-bar-chart.component';
 import { BulletChartComponent } from './components/bullet-chart/bullet-chart.component';
 import { CumulativeLineComponent } from './components/cumulative-line/cumulative-line.component';
 import { PieChartComponent } from './components/pie-chart/pie.component';
@@ -31,9 +31,9 @@ import {ForceComponent} from './components/force/force.component';
   declarations: [
     AppComponent,
     BulletChartComponent,
-    BarChartComponent,
-    HMBChartComponent,
-    MultiBarChartComponent,
+    DiscreteBarChartComponent,
+    VerMultiBarChartComponent,
+    HorMultiBarChartComponent,
     SimpleLineChartComponent,
     StackedGroupedMultiBarComponent,
     StackedAreaComponent,
