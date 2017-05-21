@@ -79,6 +79,7 @@ export class VerMultiBarChartComponent implements OnInit {
 
 
     chart.reduceXTicks(false).staggerLabels(true);
+
     chart.xAxis
       .axisLabel('ID of Furry Cat Households')
       .axisLabelDistance(35)
@@ -105,7 +106,7 @@ export class VerMultiBarChartComponent implements OnInit {
     chart.state.dispatch.on('change', function (state) {
       nv.log('state', JSON.stringify(state));
     });
-
+    nv.log('hello');
     nv.utils.windowResize(chart.update);
   }
 }

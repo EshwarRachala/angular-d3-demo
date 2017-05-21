@@ -3,9 +3,7 @@ import { ChartService } from 'ngnvd3';
 
 @Component({
   selector: 'app-stacked-grouped-multi-bar',
-  template: `<div class="gallery with-transitions" id="chart1">
-              <svg height="500"></svg>
-            </div>`
+  template: `<svg id="chart" height="600"></svg>`
 })
 export class StackedAreaComponent implements OnInit {
   private nv: any;
@@ -93,6 +91,7 @@ export class StackedAreaComponent implements OnInit {
       .useInteractiveGuideline(true)
       .rightAlignYAxis(true)
       .showControls(true)
+      .controlLabels({stacked: 'Stacked'})
       .clipEdge(true);
 
     chart.xAxis
@@ -103,8 +102,9 @@ export class StackedAreaComponent implements OnInit {
     chart.yAxis
       .tickFormat(d3.format(',.2f'));
 
-    d3.select('#chart1 svg')
+    d3.select('#chart')
       .datum(data)
+      .transition().duration(1000)
       .call(chart);
 
     nv.utils.windowResize(chart.update);

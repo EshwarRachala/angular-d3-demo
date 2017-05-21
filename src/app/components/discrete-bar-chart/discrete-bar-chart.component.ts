@@ -4,7 +4,7 @@ import { ChartService } from 'ngnvd3';
 @Component({
   moduleId: module.id,
   selector: 'app-bar-chart',
-  template: '<div class="gallery with-transitions" id="chart1"><svg height="600"></svg></div>'
+  template: '<div class="gallery with-transitions" id="chart1"><svg height="500"></svg></div>'
 })
 export class DiscreteBarChartComponent implements OnInit {
   private nv: any;
@@ -60,12 +60,26 @@ export class DiscreteBarChartComponent implements OnInit {
     const nv = this.nv;
     const d3 = this.d3;
     const data = this.data;
+
     const chart = nv.models.discreteBarChart()
       .x(function (d) { return d.label })
       .y(function (d) { return d.value })
       .staggerLabels(true)
       .showValues(true)
+      // .showXAxis(true)
       .duration(250);
+
+    // nv.models.tooltip(false);
+
+    chart.options({
+      showXAxis: false,
+      tooltips: false
+    })
+
+    chart.options = nv.utils.optionsFunc.bind(chart);
+
+
+
 
     d3.select('#chart1 svg')
       .datum(data)
