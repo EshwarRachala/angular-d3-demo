@@ -1,3 +1,4 @@
+import { LineViewFinderChartComponent } from './components/LineView/lineview.component';
 import { StackedAreaComponent } from './components/stacked-area/stackedarea.component';
 import { StackedGroupedMultiBarComponent } from './components/stacked-grouped-multi-bar/stacked-grouped-multi-bar';
 import { SimpleLineChartComponent } from './components/simple-line/simpleline.component';
@@ -25,7 +26,8 @@ import { BulletChartComponent } from './components/bullet-chart/bullet-chart.com
     MultiBarChartComponent,
     SimpleLineChartComponent,
     StackedGroupedMultiBarComponent,
-    StackedAreaComponent
+    StackedAreaComponent,
+    LineViewFinderChartComponent
   ],
   imports: [
     BrowserModule,
