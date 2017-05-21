@@ -13,7 +13,8 @@ body {
 }
 
 .mdl-navigation>.mdl-navigation__link {
-    padding: 8px;
+    padding: 5px;
+    font-size: 12px;
 }
 
 .mdl-layout__header-row {

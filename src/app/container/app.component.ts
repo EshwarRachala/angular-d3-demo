@@ -21,7 +21,11 @@ export class AppComponent {
     linebar: ['/linebar'],
     pie: ['/pie'],
     scatteredbbl: ['/scatteredbbl'],
-    candlestick: ['/candlestick']
+    candlestick: ['/candlestick'],
+    boxplot: ['/boxplot'],
+    force: ['/force'],
+    Sunburst: ['/Sunburst'],
+    Ohlc: ['/Ohlc']
   }
 
 }

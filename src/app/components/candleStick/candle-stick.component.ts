@@ -88,6 +88,7 @@ export class CandleStickChartComponent implements OnInit {
         {'date': 15953, 'open': 165.85, 'high': 166.4, 'low': 165.73, 'close': 165.96, 'volume': 62930500, 'adjusted': 165.96}
     ]}];
 
+
   constructor(private service: ChartService) {
     this.nv = service.getnvD3();
     this.d3 = service.getD3();
