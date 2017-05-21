@@ -3,7 +3,9 @@ import { ChartService } from 'ngnvd3';
 
 @Component({
   selector: 'app-simple-line-chart',
-  template: `<div class="gallery with-transitions" id="chart1"><svg height="500"></svg></div>`
+  template: `<div class="gallery with-transitions" id="chart1">
+                <svg height="500"></svg>
+             </div>`
 })
 export class SimpleLineChartComponent implements OnInit {
   private nv: any;

@@ -1,3 +1,4 @@
+import { CumulativeLineComponent } from './components/cumulative-line/cumulative-line.component';
 import { StackedAreaComponent } from './components/stacked-area/stackedarea.component';
 import { SimpleLineChartComponent } from './components/simple-line/simpleline.component';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
@@ -14,11 +15,12 @@ export const ROUTES: Routes =
     { path: '', component: HMBChartComponent },
     { path: 'HMBchart', component: HMBChartComponent },
     { path: 'MultiBar', component: MultiBarChartComponent },
+    { path: 'barchart', component: BarChartComponent },
     { path: 'bulletchart', component: BulletChartComponent },
     { path: 'stackgroupedmultibar', component: StackedGroupedMultiBarComponent },
     { path: 'stackedarea', component: StackedAreaComponent },
     { path: 'SimpleLine', component: SimpleLineChartComponent },
     { path: 'viewfinder', component: LineViewFinderChartComponent },
-    { path: 'barchart', component: BarChartComponent },
+    { path: 'cumulativeline', component: CumulativeLineComponent },
     { path: '*', component: HMBChartComponent }
   ];

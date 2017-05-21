@@ -15,6 +15,7 @@ export class AppComponent {
     DiscreteBar: ['/barchart'],
     SimpleLine: ['/SimpleLine'],
     stackedarea: ['/stackedarea'],
+    cumulativeline: ['/cumulativeline'],
     viewfinder: ['/viewfinder'],
     bulletchart: ['/bulletchart'],
   }
