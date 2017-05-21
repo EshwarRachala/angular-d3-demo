@@ -52,7 +52,7 @@ export class ScatteredBubbleChartComponent implements OnInit {
       }
 
        for (let j = 0; j < points; j++) {
-            data[i].values.push({
+            data[j].values.push({
               x: random()
             , y: random()
             , size: Math.random()
