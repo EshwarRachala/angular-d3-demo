@@ -13,8 +13,8 @@ import { LineViewFinderChartComponent } from './components/LineView/lineview.com
 import {ScatteredBubbleChartComponent} from './components/scattered-bubble/scattered-bubble.component';
 import { CandleStickChartComponent } from './components/candleStick/candle-stick.component';
 import {BoxPlotComponent} from './components/boxplot/boxplot.component';
-
 import { OhlcChartComponent} from './components/Ohlc/ohlc.component';
+import {SunBurstComponent} from './components/Sunburst/sunburst.componet';
 
 export const ROUTES: Routes =
   [
@@ -34,7 +34,7 @@ export const ROUTES: Routes =
     { path: 'candlestick', component: CandleStickChartComponent },
     { path: 'boxplot', component: BoxPlotComponent },
     { path: 'force', component: LineViewFinderChartComponent },
-    { path: 'Sunburst', component: LineViewFinderChartComponent },
+    { path: 'Sunburst', component: SunBurstComponent },
     { path: 'Ohlc', component: OhlcChartComponent },
     { path: '*', component: HMBChartComponent }
   ];

@@ -25,6 +25,8 @@ import {BoxPlotComponent} from './components/boxplot/boxplot.component';
 
 import { OhlcChartComponent} from './components/Ohlc/ohlc.component';
 
+import {SunBurstComponent} from './components/Sunburst/sunburst.componet';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { OhlcChartComponent} from './components/Ohlc/ohlc.component';
     ScatteredBubbleChartComponent,
     CandleStickChartComponent,
     BoxPlotComponent,
-    OhlcChartComponent
+    OhlcChartComponent,
+    SunBurstComponent
   ],
   imports: [
     BrowserModule,
