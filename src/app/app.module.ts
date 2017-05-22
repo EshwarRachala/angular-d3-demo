@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { ROUTES } from './app.routes';
 import { RouterModule } from '@angular/router';
 
@@ -20,12 +20,12 @@ import { DiscreteBarChartComponent } from './components/discrete-bar-chart/discr
 import { BulletChartComponent } from './components/bullet-chart/bullet-chart.component';
 import { CumulativeLineComponent } from './components/cumulative-line/cumulative-line.component';
 import { PieChartComponent } from './components/pie-chart/pie.component';
-import {ScatteredBubbleChartComponent} from './components/scattered-bubble/scattered-bubble.component';
+import { ScatteredBubbleChartComponent } from './components/scattered-bubble/scattered-bubble.component';
 import { CandleStickChartComponent } from './components/candleStick/candle-stick.component';
-import {BoxPlotComponent} from './components/boxplot/boxplot.component';
-import { OhlcChartComponent} from './components/Ohlc/ohlc.component';
-import {SunBurstComponent} from './components/Sunburst/sunburst.componet';
-import {ForceComponent} from './components/force/force.component';
+import { BoxPlotComponent } from './components/boxplot/boxplot.component';
+import { OhlcChartComponent } from './components/Ohlc/ohlc.component';
+import { SunBurstComponent } from './components/Sunburst/sunburst.componet';
+import { ForceComponent } from './components/force/force.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +55,7 @@ import {ForceComponent} from './components/force/force.component';
     RouterModule.forRoot(ROUTES),
     ChartModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }]
 })
 export class AppModule { }
