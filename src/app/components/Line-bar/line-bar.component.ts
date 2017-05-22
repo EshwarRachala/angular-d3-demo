@@ -38,6 +38,7 @@ export class LineBarChartComponent implements OnInit {
     const nv = this.nv;
     const d3 = this.d3;
     const data = this.data;
+
     const chart = nv.models.linePlusBarChart()
       .margin({ top: 30, right: 60, bottom: 50, left: 70 })
       .x(function (d, i) { return i })

@@ -46,7 +46,8 @@ export class SimpleLineChartComponent implements OnInit {
           values: sin2,
           key: 'Another sine wave',
           color: '#7777ff',
-          area: true      // area - set to true if you want this line to turn into a filled area chart.
+          area: true
+          // area - set to true if you want this line to turn into a filled area chart.
         }
       ];
     }
@@ -58,16 +59,17 @@ export class SimpleLineChartComponent implements OnInit {
     const data = this.data;
 
     const chart = nv.models.lineChart()
-      .options({
-        duration: 300,
-        useInteractiveGuideline: true
-      })
-      ;
+      .margin({ left: 100 })
+      .useInteractiveGuideline(true)
+      .showLegend(true)
+      .showYAxis(true)
+      .showXAxis(true);
+
     chart.xAxis
       .axisLabel('Time (s)')
       .tickFormat(d3.format(',.1f'))
-      .staggerLabels(true)
-      ;
+      .staggerLabels(true);
+
     chart.yAxis
       .axisLabel('Voltage (v)')
       .tickFormat(function (d) {
