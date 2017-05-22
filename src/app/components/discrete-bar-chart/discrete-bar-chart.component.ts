@@ -62,11 +62,13 @@ export class DiscreteBarChartComponent implements OnInit {
     const data = this.data;
 
     const chart = nv.models.discreteBarChart()
-      .x(function (d) { return d.label })
-      .y(function (d) { return d.value })
+      .x( d => d.label)
+      .y( d => d.value)
       .staggerLabels(true)
       .showValues(true)
-      // .showXAxis(true)
+      .showXAxis(true)
+      .showYAxis(true)
+      // .tooltips(true)
       .duration(250);
 
     // nv.models.tooltip(false);
