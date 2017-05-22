@@ -4,7 +4,7 @@ import { ChartService } from 'ngnvd3';
 @Component({
   moduleId: module.id,
   selector: 'app-hmb-chart',
-  template: '<svg class="gallery with-transitions" id="chart1" height="400"></svg>'
+  template: '<svg class="gallery with-transitions" id="chart1" height="550"></svg>'
 })
 export class VerMultiBarChartComponent implements OnInit {
   private nv: any;
@@ -72,15 +72,16 @@ export class VerMultiBarChartComponent implements OnInit {
 
     const chart = nv.models.multiBarChart()
       .barColor(d3.scale.category20().range())
-      .transitionDuration(300)
       .reduceXTicks(true)
+      .duration(350)
       .margin({ bottom: 100, left: 70 })
       .rotateLabels(45)
       .showControls(true)
-      .groupSpacing(0.1);
+      .groupSpacing(0.1)
+      .staggerLabels(true);
 
 
-   // chart.reduceXTicks(false).staggerLabels(true);
+  //  chart.reduceXTicks(false).staggerLabels(true);
 
     chart.xAxis
       .axisLabel('ID of Furry Cat Households')
@@ -96,7 +97,7 @@ export class VerMultiBarChartComponent implements OnInit {
     chart.dispatch.on('renderEnd', function () {
       nv.log('Render Complete');
     });
-    d3.select('#chart1 svg')
+    d3.select('#chart1')
       .datum(this.data)
       .call(chart);
 
