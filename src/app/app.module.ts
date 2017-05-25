@@ -26,6 +26,7 @@ import { BoxPlotComponent } from './components/boxplot/boxplot.component';
 import { OhlcChartComponent } from './components/Ohlc/ohlc.component';
 import { SunBurstComponent } from './components/Sunburst/sunburst.componet';
 import { ForceComponent } from './components/force/force.component';
+import { DemoComponent } from './components/demo/demo.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { ForceComponent } from './components/force/force.component';
     BoxPlotComponent,
     OhlcChartComponent,
     SunBurstComponent,
-    ForceComponent
+    ForceComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,

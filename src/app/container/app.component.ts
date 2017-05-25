@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'Charts';
 
   public links = {
+    Demo: ['/Demo'],
     VerMutltiBar: ['/VerMutltiBar'],
     HorMultiBar: ['/HorMultiBar'],
     stackgroupedmultibar: ['/stackgroupedmultibar'],

@@ -18,10 +18,12 @@ import { OhlcChartComponent} from './components/Ohlc/ohlc.component';
 import {SunBurstComponent} from './components/Sunburst/sunburst.componet';
 
 import {ForceComponent} from './components/force/force.component';
+import { DemoComponent } from './components/demo/demo.component';
 
 export const ROUTES: Routes =
   [
-    { path: '', component: VerMultiBarChartComponent },
+    { path: '', component: DemoComponent },
+    { path: 'Demo', component: DemoComponent },
     { path: 'VerMutltiBar', component: VerMultiBarChartComponent },
     { path: 'HorMultiBar', component: HorMultiBarChartComponent },
     { path: 'DiscreteBar', component: DiscreteBarChartComponent },
@@ -39,6 +41,6 @@ export const ROUTES: Routes =
     { path: 'force', component: ForceComponent },
     { path: 'Sunburst', component: SunBurstComponent },
     { path: 'Ohlc', component: OhlcChartComponent },
-    { path: '*', component: VerMultiBarChartComponent }
+    { path: '*', component: DemoComponent }
   ];
 
