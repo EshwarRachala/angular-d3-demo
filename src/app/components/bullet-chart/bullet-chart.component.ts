@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { ChartModule, ChartService } from 'ngnvd3';
+import { ChartModule, ChartService, NV, D3 } from 'ngnvd3';
 
 @Component({
   selector: 'app-bullet-chart',

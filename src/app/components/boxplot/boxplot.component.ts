@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { ChartService } from 'ngnvd3';
+import { ChartService, NV, D3 } from 'ngnvd3';
 
 @Component({
   selector: 'app-box-plot-chart',
@@ -8,9 +8,8 @@ import { ChartService } from 'ngnvd3';
              </div>`
 })
 export class BoxPlotComponent implements OnInit {
-  private nv: any;
-  private d3: any;
-
+  private nv: NV;
+  private d3: D3;
   private data: any;
 
   constructor(private service: ChartService) {
@@ -58,6 +57,7 @@ export class BoxPlotComponent implements OnInit {
     const nv = this.nv;
     const d3 = this.d3;
     const data = this.data;
+
 
     const chart = nv.models.boxPlotChart()
       .x(function (d) { return d.label })
