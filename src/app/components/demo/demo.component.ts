@@ -1,13 +1,12 @@
 import { ChartConfig } from 'ngnvd3';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-demo',
   template: `<button (click)="click($event)">submit</button>
-  <hmb-chart *ngIf="config" [(config)]="config"></hmb-chart>`
+                <hmb-chart *ngIf="config" [(config)]="config"></hmb-chart>`
 })
-export class DemoComponent implements OnInit {
-
+export class DemoComponent {
   public config: ChartConfig = <ChartConfig>{};
 
   constructor() {
@@ -108,12 +107,7 @@ export class DemoComponent implements OnInit {
 
   click(event) {
     this.getconfig();
-    this.config.height = 400;
+    this.config.height = 600;
     event.preventDefault();
   }
-
-  ngOnInit() {
-
-  }
-
 }
